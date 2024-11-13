@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=3 uid="uid://dcr6dv15cs5gi"]
+
+[ext_resource type="Script" path="res://outline_effect.gd" id="1_c2y6n"]
+[ext_resource type="Script" path="res://example_scene/spin_object.gd" id="2_vvs0j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s8orq"]
+ground_bottom_color = Color(0.113581, 0.130596, 0.188898, 1)
+ground_curve = 0.109283
+
+[sub_resource type="Sky" id="Sky_aiuqb"]
+sky_material = SubResource("ProceduralSkyMaterial_s8orq")
+
+[sub_resource type="Environment" id="Environment_5m6fd"]
+background_mode = 2
+sky = SubResource("Sky_aiuqb")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_a1n17"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("1_c2y6n")
+
+[sub_resource type="Compositor" id="Compositor_1guh8"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_a1n17")])
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35sov"]
+albedo_color = Color(0.909653, 0.129902, 0.395398, 1)
+metallic = 0.1
+metallic_specular = 0.74
+roughness = 0.53
+
+[sub_resource type="PrismMesh" id="PrismMesh_ghjf8"]
+material = SubResource("StandardMaterial3D_35sov")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj5tn"]
+albedo_color = Color(0.270146, 0.680464, 0.46697, 1)
+metallic = 0.18
+metallic_specular = 0.69
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_0lewg"]
+material = SubResource("StandardMaterial3D_nj5tn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvh7e"]
+albedo_color = Color(0.123047, 0.566469, 0.848631, 1)
+metallic = 0.41
+metallic_specular = 0.75
+roughness = 0.6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qboyj"]
+material = SubResource("StandardMaterial3D_uvh7e")
+height = 1.0
+
+[node name="Example" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5m6fd")
+compositor = SubResource("Compositor_1guh8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, -0.75, 0.433013, -9.83849e-09, 0.5, 0.866025, -0.866025, -0.433013, 0.25, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Prism" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.676676, -0.351946, -0.64629, 0.165908, 0.928313, -0.331817, 0.717204, 0.117319, 0.686816, -3, 0, 0)
+mesh = SubResource("PrismMesh_ghjf8")
+script = ExtResource("2_vvs0j")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.985629, -0.165913, 0.0286571, 0.165908, 0.928313, -0.331817, 0.0286602, 0.331821, 0.942646, 0, 0, 0)
+mesh = SubResource("BoxMesh_0lewg")
+script = ExtResource("2_vvs0j")
+
+[node name="Cylinder" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.985629, -0.165913, 0.0286571, 0.165908, 0.928313, -0.331817, 0.0286602, 0.331821, 0.942646, 3, 0, 0)
+mesh = SubResource("CylinderMesh_qboyj")
+script = ExtResource("2_vvs0j")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1, 3)
+current = true
+fov = 90.0
+far = 1000.0
