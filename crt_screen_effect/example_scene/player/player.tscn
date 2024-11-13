@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://vhv1rpnkgdwh"]
+
+[ext_resource type="Texture2D" uid="uid://b5cjr3db4ct4d" path="res://example_scene/player/res/penguin.png" id="1_7plfi"]
+[ext_resource type="Script" path="res://example_scene/player/player.gd" id="1_hyxjm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5rn5"]
+size = Vector2(12, 12)
+
+[sub_resource type="Animation" id="Animation_3uuva"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Penguin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_joo78"]
+resource_name = "idle"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Penguin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2kmun"]
+resource_name = "jump"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Penguin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_47f8k"]
+resource_name = "walk"
+length = 0.3
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Penguin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hdeh0"]
+_data = {
+"RESET": SubResource("Animation_3uuva"),
+"idle": SubResource("Animation_joo78"),
+"jump": SubResource("Animation_2kmun"),
+"walk": SubResource("Animation_47f8k")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hyxjm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a5rn5")
+
+[node name="Penguin" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -2)
+texture = ExtResource("1_7plfi")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hdeh0")
+}
