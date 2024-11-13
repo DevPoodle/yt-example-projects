@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cd7o2mkvhvrow"]
+
+[ext_resource type="Shader" path="res://pixel_art.gdshader" id="1_gl2qr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ixhuw"]
+sky_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
+
+[sub_resource type="Sky" id="Sky_oa8xa"]
+sky_material = SubResource("ProceduralSkyMaterial_ixhuw")
+
+[sub_resource type="Environment" id="Environment_g16c4"]
+background_mode = 2
+sky = SubResource("Sky_oa8xa")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_ym15s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vuj06"]
+shader = ExtResource("1_gl2qr")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b4lkn"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[node name="Example" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g16c4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ym15s")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.855887, -0.208662, 0.473199, 0, 0.914991, 0.403475, -0.517163, -0.345329, 0.783128, 1.03332, 0.954971, 1.77004)
+current = true
+fov = 90.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vuj06")
+mesh = SubResource("QuadMesh_b4lkn")
