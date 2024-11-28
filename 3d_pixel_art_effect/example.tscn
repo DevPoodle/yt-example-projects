@@ -1,11 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://cd7o2mkvhvrow"]
 
 [ext_resource type="Shader" path="res://pixel_art.gdshader" id="1_gl2qr"]
+[ext_resource type="PackedScene" uid="uid://bloy1d0sodo1p" path="res://sample_model/sample_model.blend" id="2_xxm2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ixhuw"]
+sky_top_color = Color(0.396718, 0.457726, 0.506311, 1)
 sky_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
-ground_bottom_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0.764785, 0.776031, 0.795705, 1)
 ground_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
+ground_curve = 1.32514
+energy_multiplier = 1.1
 
 [sub_resource type="Sky" id="Sky_oa8xa"]
 sky_material = SubResource("ProceduralSkyMaterial_ixhuw")
@@ -14,15 +18,24 @@ sky_material = SubResource("ProceduralSkyMaterial_ixhuw")
 background_mode = 2
 sky = SubResource("Sky_oa8xa")
 tonemap_mode = 2
+ssao_intensity = 16.0
+sdfgi_enabled = true
+adjustment_enabled = true
+adjustment_contrast = 1.2
+adjustment_saturation = 1.2
 
-[sub_resource type="BoxMesh" id="BoxMesh_ym15s"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vuj06"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_of23b"]
+render_priority = 0
 shader = ExtResource("1_gl2qr")
+shader_parameter/target_resolution = Vector2(320, 180)
+shader_parameter/colors_per_channel = 16.0
+shader_parameter/depth_outline_strength = 0.8
+shader_parameter/normal_outline_strength = 0.5
 
-[sub_resource type="QuadMesh" id="QuadMesh_b4lkn"]
-size = Vector2(1280, 720)
-center_offset = Vector3(640, 360, 0)
+[sub_resource type="QuadMesh" id="QuadMesh_xwtxn"]
+material = SubResource("ShaderMaterial_of23b")
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="Example" type="Node3D"]
 
@@ -30,18 +43,17 @@ center_offset = Vector3(640, 360, 0)
 environment = SubResource("Environment_g16c4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.33761, -0.629246, -0.700049, -0.797508, -0.203836, 0.56783, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_ym15s")
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.855887, -0.208662, 0.473199, 0, 0.914991, 0.403475, -0.517163, -0.345329, 0.783128, 1.03332, 0.954971, 1.77004)
+transform = Transform3D(-0.310676, 0.444775, -0.840033, 0, 0.883766, 0.46793, 0.950516, 0.145375, -0.274565, -3.529, 2.951, -1.379)
 current = true
-fov = 90.0
+fov = 70.0
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-texture_filter = 1
-material = SubResource("ShaderMaterial_vuj06")
-mesh = SubResource("QuadMesh_b4lkn")
+[node name="Island" parent="." instance=ExtResource("2_xxm2o")]
+
+[node name="ScreenQuad" type="MeshInstance3D" parent="."]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_xwtxn")
+skeleton = NodePath("../WorldEnvironment")
