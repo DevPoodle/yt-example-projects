@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dxwqiqum5s7pq"
+path="res://.godot/imported/trainset-rail-bend.obj-869ed75d1acfa3167324cf910a787cd5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trainset-rail-bend.obj-869ed75d1acfa3167324cf910a787cd5.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/trainset-rail-bend.obj"
+dest_files=["res://.godot/imported/trainset-rail-bend.obj-869ed75d1acfa3167324cf910a787cd5.mesh", "res://.godot/imported/trainset-rail-bend.obj-869ed75d1acfa3167324cf910a787cd5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

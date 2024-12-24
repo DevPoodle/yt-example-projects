@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cc7upf2fh2yk3"
+path="res://.godot/imported/cabin-corner.obj-cf162c9a987667eabf6e577d964ee3b7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cabin-corner.obj-cf162c9a987667eabf6e577d964ee3b7.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/cabin-corner.obj"
+dest_files=["res://.godot/imported/cabin-corner.obj-cf162c9a987667eabf6e577d964ee3b7.mesh", "res://.godot/imported/cabin-corner.obj-cf162c9a987667eabf6e577d964ee3b7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

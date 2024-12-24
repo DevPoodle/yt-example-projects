@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://k305up5y8ryp"
+path="res://.godot/imported/cabin-fence.obj-80f34dea2662ac69db0ede4c96b2c549.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cabin-fence.obj-80f34dea2662ac69db0ede4c96b2c549.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/cabin-fence.obj"
+dest_files=["res://.godot/imported/cabin-fence.obj-80f34dea2662ac69db0ede4c96b2c549.mesh", "res://.godot/imported/cabin-fence.obj-80f34dea2662ac69db0ede4c96b2c549.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

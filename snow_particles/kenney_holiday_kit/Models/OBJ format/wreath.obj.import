@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bn2xthstfawx2"
+path="res://.godot/imported/wreath.obj-c3d63153b3350e40459a5535bed69cfa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wreath.obj-c3d63153b3350e40459a5535bed69cfa.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/wreath.obj"
+dest_files=["res://.godot/imported/wreath.obj-c3d63153b3350e40459a5535bed69cfa.mesh", "res://.godot/imported/wreath.obj-c3d63153b3350e40459a5535bed69cfa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

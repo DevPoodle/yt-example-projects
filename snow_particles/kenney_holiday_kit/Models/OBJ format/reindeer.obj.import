@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://856cfd2t2r86"
+path="res://.godot/imported/reindeer.obj-c02e4ed0651e5ac54285345374af62cd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/reindeer.obj-c02e4ed0651e5ac54285345374af62cd.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/reindeer.obj"
+dest_files=["res://.godot/imported/reindeer.obj-c02e4ed0651e5ac54285345374af62cd.mesh", "res://.godot/imported/reindeer.obj-c02e4ed0651e5ac54285345374af62cd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

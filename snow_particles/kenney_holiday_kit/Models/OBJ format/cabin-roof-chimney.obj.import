@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://syeg7flyfjym"
+path="res://.godot/imported/cabin-roof-chimney.obj-d9276327def9d623168085e0d5eb76c0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cabin-roof-chimney.obj-d9276327def9d623168085e0d5eb76c0.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/cabin-roof-chimney.obj"
+dest_files=["res://.godot/imported/cabin-roof-chimney.obj-d9276327def9d623168085e0d5eb76c0.mesh", "res://.godot/imported/cabin-roof-chimney.obj-d9276327def9d623168085e0d5eb76c0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

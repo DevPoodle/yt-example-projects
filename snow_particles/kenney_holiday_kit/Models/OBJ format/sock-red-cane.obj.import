@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dy4jydu1eem8k"
+path="res://.godot/imported/sock-red-cane.obj-fab78a4b79b60198b29c1db79dcf412c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sock-red-cane.obj-fab78a4b79b60198b29c1db79dcf412c.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/sock-red-cane.obj"
+dest_files=["res://.godot/imported/sock-red-cane.obj-fab78a4b79b60198b29c1db79dcf412c.mesh", "res://.godot/imported/sock-red-cane.obj-fab78a4b79b60198b29c1db79dcf412c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

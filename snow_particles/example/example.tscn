@@ -1,0 +1,394 @@
+[gd_scene load_steps=35 format=3 uid="uid://2tbp525mvacu"]
+
+[ext_resource type="ArrayMesh" uid="uid://cgfdcughlk555" path="res://kenney_holiday_kit/Models/OBJ format/rocks-large.obj" id="1_yj8qn"]
+[ext_resource type="ArrayMesh" uid="uid://doyphxcjk1yie" path="res://kenney_holiday_kit/Models/OBJ format/rocks-medium.obj" id="2_r5lkb"]
+[ext_resource type="ArrayMesh" uid="uid://cowrqt717a2rg" path="res://kenney_holiday_kit/Models/OBJ format/rocks-small.obj" id="3_6wjce"]
+[ext_resource type="ArrayMesh" uid="uid://rtw12pcjt0gu" path="res://kenney_holiday_kit/Models/OBJ format/snow-pile.obj" id="4_05r7e"]
+[ext_resource type="ArrayMesh" uid="uid://dt1kyn03sbdgy" path="res://kenney_holiday_kit/Models/OBJ format/snow-flat.obj" id="5_ka078"]
+[ext_resource type="ArrayMesh" uid="uid://ba5y8g0bdejw" path="res://kenney_holiday_kit/Models/OBJ format/snow-flat-large.obj" id="6_4y3xy"]
+[ext_resource type="ArrayMesh" uid="uid://kxpsgyf10rwf" path="res://kenney_holiday_kit/Models/OBJ format/tree-snow-c.obj" id="7_v1am7"]
+[ext_resource type="ArrayMesh" uid="uid://dd7hiij7or4nn" path="res://kenney_holiday_kit/Models/OBJ format/bench.obj" id="8_xscic"]
+[ext_resource type="ArrayMesh" uid="uid://c8ud8r8pv6ai2" path="res://kenney_holiday_kit/Models/OBJ format/lantern.obj" id="9_it8q2"]
+[ext_resource type="ArrayMesh" uid="uid://divc3n2laeo4i" path="res://kenney_holiday_kit/Models/OBJ format/cabin-roof-snow.obj" id="10_cxh71"]
+[ext_resource type="ArrayMesh" uid="uid://bemmikewqnb21" path="res://kenney_holiday_kit/Models/OBJ format/cabin-roof-top.obj" id="11_6lsgd"]
+[ext_resource type="ArrayMesh" uid="uid://dw0dhclv6xxed" path="res://kenney_holiday_kit/Models/OBJ format/cabin-wall.obj" id="12_1wq0x"]
+[ext_resource type="ArrayMesh" uid="uid://ca2uydks4f3lr" path="res://kenney_holiday_kit/Models/OBJ format/cabin-corner-bottom.obj" id="13_257gl"]
+[ext_resource type="ArrayMesh" uid="uid://cqp86gjfrik51" path="res://kenney_holiday_kit/Models/OBJ format/cabin-roof-snow-dormer.obj" id="14_vi0k6"]
+[ext_resource type="ArrayMesh" uid="uid://dx2no3s2v416r" path="res://kenney_holiday_kit/Models/OBJ format/cabin-wall-roof.obj" id="15_4yngu"]
+[ext_resource type="ArrayMesh" uid="uid://c6tc38hwrnfdc" path="res://kenney_holiday_kit/Models/OBJ format/sled-long.obj" id="16_4bql4"]
+[ext_resource type="ArrayMesh" uid="uid://dndnfdtqr76v0" path="res://kenney_holiday_kit/Models/OBJ format/present-b-round.obj" id="17_2w4m0"]
+[ext_resource type="ArrayMesh" uid="uid://dtnpylriw3tmg" path="res://kenney_holiday_kit/Models/OBJ format/cabin-window-a.obj" id="18_yohum"]
+[ext_resource type="ArrayMesh" uid="uid://dkege0q80jwfr" path="res://kenney_holiday_kit/Models/OBJ format/cabin-overhang-door-rotate.obj" id="19_iuvyc"]
+[ext_resource type="ArrayMesh" uid="uid://bwnjone11n7tk" path="res://kenney_holiday_kit/Models/OBJ format/floor-stone.obj" id="20_bkl46"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6gbot"]
+sky_top_color = Color(0.332969, 0.456458, 0.615909, 1)
+sky_horizon_color = Color(0.589879, 0.666749, 0.73112, 1)
+sky_curve = 0.713524
+ground_bottom_color = Color(0.56947, 0.635353, 0.768104, 1)
+ground_horizon_color = Color(0.588235, 0.666667, 0.729412, 1)
+ground_curve = 0.134544
+
+[sub_resource type="Sky" id="Sky_865fj"]
+sky_material = SubResource("ProceduralSkyMaterial_6gbot")
+
+[sub_resource type="Environment" id="Environment_8at16"]
+background_mode = 2
+sky = SubResource("Sky_865fj")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.819684, 0.831723, 0.849137, 1)
+fog_sun_scatter = 0.5
+fog_density = 0.03
+fog_aerial_perspective = 0.5
+fog_sky_affect = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bpos"]
+albedo_color = Color(0.881937, 0.881937, 0.881937, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vh1hp"]
+material = SubResource("StandardMaterial3D_5bpos")
+height = 1.0
+
+[sub_resource type="Gradient" id="Gradient_qrvc6"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4ko0m"]
+gradient = SubResource("Gradient_qrvc6")
+
+[sub_resource type="Curve" id="Curve_vsfxu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.148438, 1), -1.61607, -1.61607, 0, 0, Vector2(1, 0.388235), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_14pme"]
+curve = SubResource("Curve_vsfxu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xt6ua"]
+emission_shape = 3
+emission_box_extents = Vector3(7, 1, 7)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 6.0
+gravity = Vector3(0, -5.5, 0)
+radial_accel_min = -4.0
+radial_accel_max = 4.0
+tangential_accel_min = -8.0
+tangential_accel_max = 8.0
+damping_min = 4.0
+damping_max = 6.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_14pme")
+color_ramp = SubResource("GradientTexture1D_4ko0m")
+
+[sub_resource type="Gradient" id="Gradient_hfuw4"]
+offsets = PackedFloat32Array(0.1, 0.7)
+colors = PackedColorArray(1, 1, 1, 1, 0.670689, 0.67069, 0.670689, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1jyx2"]
+gradient = SubResource("Gradient_hfuw4")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tj0w7"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_1jyx2")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_wyen5"]
+material = SubResource("StandardMaterial3D_tj0w7")
+size = Vector2(0.3, 0.3)
+
+[node name="Example" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.794912, -0.195483, 0.574371, 0, 0.946674, 0.322193, -0.606725, 0.256115, -0.752522, 4.24, 2.301, -3.181)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, -0.12941, 0.677075, 0.724446, -0.482966, 0.595035, -0.6424, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8at16")
+
+[node name="Nature" type="Node3D" parent="."]
+
+[node name="Rocks-large" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.793425, 0, 0.608669, 0, 1, 0, -0.608669, 0, 0.793425, -0.640292, 0.365741, 4.3764)
+mesh = ExtResource("1_yj8qn")
+skeleton = NodePath("../..")
+
+[node name="Rocks-medium" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.981258, 0, -0.192697, 0, 1, 0, 0.192697, 0, 0.981258, 1.68412, 0.537426, -3.46507)
+mesh = ExtResource("2_r5lkb")
+skeleton = NodePath("../..")
+
+[node name="Rocks-medium2" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.636578, 0, -0.771213, 0.0589587, 0.997073, 0.0486659, 0.768956, -0.0764493, 0.634715, -2.67843, 0.537426, 3.76213)
+mesh = ExtResource("2_r5lkb")
+skeleton = NodePath("../..")
+
+[node name="Rocks-small" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.586577, 0, -0.809893, 0, 1, 0, 0.809893, 0, 0.586577, 2.26053, 0.224816, -5.26006)
+mesh = ExtResource("3_6wjce")
+skeleton = NodePath("../..")
+
+[node name="Rocks-small2" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.586577, 0, -0.809893, 0, 1, 0, 0.809893, 0, 0.586577, -1.91549, 0.224816, 6.89093)
+mesh = ExtResource("3_6wjce")
+skeleton = NodePath("../..")
+
+[node name="Rocks-small3" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.586577, 0, -0.809893, 0, 1, 0, 0.809893, 0, 0.586577, 3.26969, 0.224816, 3.05996)
+mesh = ExtResource("3_6wjce")
+skeleton = NodePath("../..")
+
+[node name="Rocks-small4" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(-0.9028, 0, -0.43006, 0, 1, 0, 0.43006, 0, -0.9028, 3.72567, 0.0776914, 1.92713)
+mesh = ExtResource("3_6wjce")
+skeleton = NodePath("../..")
+
+[node name="Rocks-small5" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(-0.902545, 0.0237744, -0.429939, 0.0214635, 0.999717, 0.0102244, 0.43006, 0, -0.9028, -4.31072, 0.502728, -4.99167)
+mesh = ExtResource("3_6wjce")
+skeleton = NodePath("../..")
+
+[node name="Snow-pile" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06971, 0.469275, -4.57612)
+mesh = ExtResource("4_05r7e")
+skeleton = NodePath("../..")
+
+[node name="Snow-pile2" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.595706, 0, -0.803202, 0, 1, 0, 0.803202, 0, 0.595706, 1.498, 0.469275, 2.71507)
+mesh = ExtResource("4_05r7e")
+skeleton = NodePath("../..")
+
+[node name="Snow-pile3" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.986369, 0, -0.164548, 0, 1, 0, 0.164548, 0, 0.986369, 3.05849, 0.469275, -3.87512)
+mesh = ExtResource("4_05r7e")
+skeleton = NodePath("../..")
+
+[node name="Snow-pile4" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.944171, 0, 0.329455, 0, 1, 0, -0.329455, 0, 0.944171, 5.96637, 0.469275, 3.27749)
+mesh = ExtResource("4_05r7e")
+skeleton = NodePath("../..")
+
+[node name="Snow-flat" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4673, 0.416874, 0.749819)
+mesh = ExtResource("5_ka078")
+skeleton = NodePath("../..")
+
+[node name="Snow-flat2" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.65562, 0, -0.755091, 0, 1, 0, 0.755091, 0, 0.65562, -5.31707, 0.416874, -2.60579)
+mesh = ExtResource("5_ka078")
+skeleton = NodePath("../..")
+
+[node name="Snow-flat-large" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74409, 0.510852, -1.7865)
+mesh = ExtResource("6_4y3xy")
+skeleton = NodePath("../..")
+
+[node name="Snow-flat-large2" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.654006, 0, -0.75649, 0, 1, 0, 0.75649, 0, 0.654006, -1.56079, 0.510852, 1.18551)
+mesh = ExtResource("6_4y3xy")
+skeleton = NodePath("../..")
+
+[node name="Snow-flat-large3" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(-0.797725, 0, -0.603021, 0, 1, 0, 0.603021, 0, -0.797725, 1.92047, 0.510852, 5.6861)
+mesh = ExtResource("6_4y3xy")
+skeleton = NodePath("../..")
+
+[node name="Tree-snow-c" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.552721, 0, -0.429534, 0, 0.7, 0, 0.429534, 0, 0.552721, 2, 0.481645, 4)
+mesh = ExtResource("7_v1am7")
+skeleton = NodePath("../..")
+
+[node name="Tree-snow-c2" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.552721, 0, -0.429534, 0, 0.7, 0, 0.429534, 0, 0.552721, -3, 0.481645, -6)
+mesh = ExtResource("7_v1am7")
+skeleton = NodePath("../..")
+
+[node name="Tree-snow-c3" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.789602, 0, -0.61362, 0, 1, 0, 0.61362, 0, 0.789602, 4, 0.481645, 4)
+mesh = ExtResource("7_v1am7")
+skeleton = NodePath("../..")
+
+[node name="Tree-snow-c6" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.868562, 0, -0.674982, 0, 1.1, 0, 0.674982, 0, 0.868562, -4, 0.481645, -2)
+mesh = ExtResource("7_v1am7")
+skeleton = NodePath("../..")
+
+[node name="Tree-snow-c7" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.607993, 0, -0.472487, 0, 0.77, 0, 0.472487, 0, 0.607993, -1, 0.481645, -3)
+mesh = ExtResource("7_v1am7")
+skeleton = NodePath("../..")
+
+[node name="Tree-snow-c8" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.91199, 0, -0.708731, 0, 1.155, 0, 0.708731, 0, 0.91199, 6, 0.481645, 1)
+mesh = ExtResource("7_v1am7")
+skeleton = NodePath("../..")
+
+[node name="Tree-snow-c4" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(-0.218575, 0, -1.585, 0, 1.6, 0, 1.585, 0, -0.218575, 1, 0.481645, -7)
+mesh = ExtResource("7_v1am7")
+skeleton = NodePath("../..")
+
+[node name="Tree-snow-c5" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(-0.990625, 0, 0.13661, 0, 1, 0, -0.13661, 0, -0.990625, -5, 0.481645, 3)
+mesh = ExtResource("7_v1am7")
+skeleton = NodePath("../..")
+
+[node name="Bench" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -5, 0.5, 0)
+mesh = ExtResource("8_xscic")
+skeleton = NodePath("../..")
+
+[node name="Bench2" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 5.2, 0.4, 2.9)
+mesh = ExtResource("8_xscic")
+skeleton = NodePath("../..")
+
+[node name="Lantern" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, 4.7, 0.5, 3.8)
+mesh = ExtResource("9_it8q2")
+skeleton = NodePath("../..")
+
+[node name="Lantern2" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, -5.4, 0.5, 1.3)
+mesh = ExtResource("9_it8q2")
+skeleton = NodePath("../..")
+
+[node name="Floor" type="MeshInstance3D" parent="Nature"]
+transform = Transform3D(16, 0, 0, 0, 1, 0, 0, 0, 16, 0, 0, 0)
+mesh = SubResource("CylinderMesh_vh1hp")
+skeleton = NodePath("../../WorldEnvironment")
+
+[node name="Cabin" type="Node3D" parent="."]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, -0.506618, -1)
+
+[node name="Cabin-roof-snow" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 2, 2, 0.5)
+mesh = ExtResource("10_cxh71")
+skeleton = NodePath("../..")
+
+[node name="Cabin-roof-snow2" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-1, 0, -1.19209e-07, 0, 1, 0, 7.45058e-08, 0, -1.7, 1, 2, 0.5)
+mesh = ExtResource("10_cxh71")
+skeleton = NodePath("../..")
+
+[node name="Cabin-roof-top" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.4, 1.5, 3.2, 0.5)
+mesh = ExtResource("11_6lsgd")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 0)
+mesh = ExtResource("12_1wq0x")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall2" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 1)
+mesh = ExtResource("12_1wq0x")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall3" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 1, 2)
+mesh = ExtResource("12_1wq0x")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall4" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 1, 2)
+mesh = ExtResource("12_1wq0x")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall5" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 1, 1)
+mesh = ExtResource("12_1wq0x")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall6" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 1, 0)
+mesh = ExtResource("12_1wq0x")
+skeleton = NodePath("../..")
+
+[node name="Cabin-corner-bottom" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1, -1.1)
+mesh = ExtResource("13_257gl")
+skeleton = NodePath("../..")
+
+[node name="Cabin-corner-bottom2" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1.1)
+mesh = ExtResource("13_257gl")
+skeleton = NodePath("../..")
+
+[node name="Cabin-corner-bottom3" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1, 1)
+mesh = ExtResource("13_257gl")
+skeleton = NodePath("../..")
+
+[node name="Cabin-corner-bottom4" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+mesh = ExtResource("13_257gl")
+skeleton = NodePath("../..")
+
+[node name="Cabin-roof-snow-dormer" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.1, 2.1, 0.5)
+mesh = ExtResource("14_vi0k6")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall-roof" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -1)
+mesh = ExtResource("15_4yngu")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall-roof2" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 2, 0)
+mesh = ExtResource("15_4yngu")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall-roof3" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 1)
+mesh = ExtResource("15_4yngu")
+skeleton = NodePath("../..")
+
+[node name="Cabin-wall-roof4" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 2, 2)
+mesh = ExtResource("15_4yngu")
+skeleton = NodePath("../..")
+
+[node name="Sled-long" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1, 0.2)
+mesh = ExtResource("16_4bql4")
+skeleton = NodePath("../..")
+
+[node name="Present-b-round" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3, 0.1)
+mesh = ExtResource("17_2w4m0")
+skeleton = NodePath("../..")
+
+[node name="Cabin-window-a2" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
+mesh = ExtResource("18_yohum")
+skeleton = NodePath("../..")
+
+[node name="Cabin-overhang-door-rotate" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
+mesh = ExtResource("19_iuvyc")
+skeleton = NodePath("../..")
+
+[node name="Floor-stone" type="MeshInstance3D" parent="Cabin"]
+transform = Transform3D(2, 0, -5.36442e-07, 0, 1, 0, 5.36442e-07, 0, 2, 2.55469, 1.00662, -0.462782)
+mesh = ExtResource("20_bkl46")
+skeleton = NodePath("../..")
+
+[node name="Snow" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+amount = 512
+lifetime = 3.5
+visibility_aabb = AABB(-41.647, -69.3699, -39.9863, 76.3932, 71.3417, 83.4207)
+process_material = SubResource("ParticleProcessMaterial_xt6ua")
+draw_pass_1 = SubResource("QuadMesh_wyen5")

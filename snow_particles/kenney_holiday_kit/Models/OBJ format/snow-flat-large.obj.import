@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ba5y8g0bdejw"
+path="res://.godot/imported/snow-flat-large.obj-3b4682e7fba0f955461ecb20637482c8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snow-flat-large.obj-3b4682e7fba0f955461ecb20637482c8.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/snow-flat-large.obj"
+dest_files=["res://.godot/imported/snow-flat-large.obj-3b4682e7fba0f955461ecb20637482c8.mesh", "res://.godot/imported/snow-flat-large.obj-3b4682e7fba0f955461ecb20637482c8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8snty6407lwv"
+path="res://.godot/imported/floor-wood.obj-daf6a0df08c31beab8c2e9c1a316d605.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-wood.obj-daf6a0df08c31beab8c2e9c1a316d605.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/floor-wood.obj"
+dest_files=["res://.godot/imported/floor-wood.obj-daf6a0df08c31beab8c2e9c1a316d605.mesh", "res://.godot/imported/floor-wood.obj-daf6a0df08c31beab8c2e9c1a316d605.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

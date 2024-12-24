@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cr8hg4bft0re2"
+path="res://.godot/imported/candy-cane-red.obj-cc0a42e86ee98a474630c6cfaf7c6d08.mesh"
+
+[deps]
+
+files=["res://.godot/imported/candy-cane-red.obj-cc0a42e86ee98a474630c6cfaf7c6d08.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/candy-cane-red.obj"
+dest_files=["res://.godot/imported/candy-cane-red.obj-cc0a42e86ee98a474630c6cfaf7c6d08.mesh", "res://.godot/imported/candy-cane-red.obj-cc0a42e86ee98a474630c6cfaf7c6d08.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

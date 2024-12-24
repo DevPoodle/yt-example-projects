@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wpei4cogp4kn"
+path="res://.godot/imported/snow-bunker.obj-556ebded03e2f3baa3a1429b33bd4aca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snow-bunker.obj-556ebded03e2f3baa3a1429b33bd4aca.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/snow-bunker.obj"
+dest_files=["res://.godot/imported/snow-bunker.obj-556ebded03e2f3baa3a1429b33bd4aca.mesh", "res://.godot/imported/snow-bunker.obj-556ebded03e2f3baa3a1429b33bd4aca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

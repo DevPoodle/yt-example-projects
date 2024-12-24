@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bajnfyq5guhac"
+path="res://.godot/imported/snowflake-c.obj-9e2824c60c4181649e8ab587cecc05c3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snowflake-c.obj-9e2824c60c4181649e8ab587cecc05c3.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/snowflake-c.obj"
+dest_files=["res://.godot/imported/snowflake-c.obj-9e2824c60c4181649e8ab587cecc05c3.mesh", "res://.godot/imported/snowflake-c.obj-9e2824c60c4181649e8ab587cecc05c3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

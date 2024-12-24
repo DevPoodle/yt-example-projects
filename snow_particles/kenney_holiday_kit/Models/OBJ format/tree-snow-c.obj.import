@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kxpsgyf10rwf"
+path="res://.godot/imported/tree-snow-c.obj-76e07f0d2dcc2197d531c8b615757d5a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree-snow-c.obj-76e07f0d2dcc2197d531c8b615757d5a.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/tree-snow-c.obj"
+dest_files=["res://.godot/imported/tree-snow-c.obj-76e07f0d2dcc2197d531c8b615757d5a.mesh", "res://.godot/imported/tree-snow-c.obj-76e07f0d2dcc2197d531c8b615757d5a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://j2jxgui5lxap"
+path="res://.godot/imported/lights-green.obj-ebaecb9c995fa38f3171da8ce04ebf0c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lights-green.obj-ebaecb9c995fa38f3171da8ce04ebf0c.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/lights-green.obj"
+dest_files=["res://.godot/imported/lights-green.obj-ebaecb9c995fa38f3171da8ce04ebf0c.mesh", "res://.godot/imported/lights-green.obj-ebaecb9c995fa38f3171da8ce04ebf0c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

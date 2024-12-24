@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cj80epcymdlry"
+path="res://.godot/imported/cabin-wall-low.obj-8268c16b478e6eda1f2bd81776a99173.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cabin-wall-low.obj-8268c16b478e6eda1f2bd81776a99173.mesh"]
+
+source_file="res://kenney_holiday_kit/Models/OBJ format/cabin-wall-low.obj"
+dest_files=["res://.godot/imported/cabin-wall-low.obj-8268c16b478e6eda1f2bd81776a99173.mesh", "res://.godot/imported/cabin-wall-low.obj-8268c16b478e6eda1f2bd81776a99173.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
