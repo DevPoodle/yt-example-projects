@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5f2upgpu870y"]
+
+[ext_resource type="PackedScene" uid="uid://vocyv3kfd876" path="res://cave_example/cave.blend" id="1_u0li5"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_7d6c1"]
+[ext_resource type="Shader" path="res://hud.gdshader" id="3_1me3b"]
+[ext_resource type="PackedScene" uid="uid://c6l5ht48d0l4c" path="res://hud.tscn" id="4_e8ld3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d331s"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_curve = 2.23928
+sky_energy_multiplier = 0.2
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+ground_energy_multiplier = 0.1
+sun_curve = 1e-05
+
+[sub_resource type="Sky" id="Sky_wms7x"]
+sky_material = SubResource("ProceduralSkyMaterial_d331s")
+
+[sub_resource type="Environment" id="Environment_kdvdp"]
+background_mode = 2
+sky = SubResource("Sky_wms7x")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.0525663, 0.0827089, 0.123794, 1)
+fog_density = 0.15
+fog_sky_affect = 0.604
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45ltl"]
+shader = ExtResource("3_1me3b")
+shader_parameter/curvature = 2.5
+
+[node name="Cave" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kdvdp")
+
+[node name="CaveModel" parent="." instance=ExtResource("1_u0li5")]
+
+[node name="Character" parent="." instance=ExtResource("2_7d6c1")]
+transform = Transform3D(-0.269182, 0, 0.963089, 0, 1, 0, -0.963089, 0, -0.269182, 9.5631, 3.29237, -13.7612)
+base_speed = 6.0
+sprint_speed = 9.0
+crouch_speed = 3.0
+acceleration = 16.0
+jump_velocity = 10.0
+in_air_momentum = false
+continuous_jumping = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_45ltl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Hud" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_e8ld3")]
+player = NodePath("../../../Character")

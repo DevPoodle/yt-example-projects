@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6l5ht48d0l4c"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_6v3yi"]
+[ext_resource type="Texture2D" uid="uid://cm2oj4j4lctll" path="res://visor_overlay.png" id="1_8msoi"]
+
+[node name="HUD" type="Node2D"]
+script = ExtResource("1_6v3yi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="VisorOverlay" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8msoi")
