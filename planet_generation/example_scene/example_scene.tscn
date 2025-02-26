@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=3 uid="uid://osbdruhhokep"]
+
+[ext_resource type="PackedScene" uid="uid://b2h7vvtud4217" path="res://planet/planet.tscn" id="1_4gqoi"]
+[ext_resource type="Script" path="res://example_scene/example_scene.gd" id="1_bgk2m"]
+[ext_resource type="Texture2D" uid="uid://qg0rwglevqjb" path="res://example_scene/res/NightSkyHDRI008_4K-HDR.exr" id="1_lc34r"]
+[ext_resource type="Shader" path="res://planet/terrain.gdshader" id="2_l1icl"]
+[ext_resource type="Texture2D" uid="uid://dd4iu2rbj5ov2" path="res://example_scene/res/terrain_gradient.tres" id="3_rrr44"]
+[ext_resource type="Shader" path="res://planet/water.gdshader" id="4_kjvx8"]
+[ext_resource type="Texture2D" uid="uid://f6y3v5vrukxp" path="res://example_scene/res/water_gradient.tres" id="5_ardp0"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bwoly"]
+panorama = ExtResource("1_lc34r")
+energy_multiplier = 0.2
+
+[sub_resource type="Sky" id="Sky_dn85q"]
+sky_material = SubResource("PanoramaSkyMaterial_bwoly")
+
+[sub_resource type="Environment" id="Environment_rqouq"]
+background_mode = 2
+sky = SubResource("Sky_dn85q")
+tonemap_mode = 2
+sdfgi_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5lwnw"]
+render_priority = 0
+shader = ExtResource("2_l1icl")
+shader_parameter/specular = 0.8
+shader_parameter/roughness = 0.6
+shader_parameter/radius = 32.0
+shader_parameter/height = 4.0
+shader_parameter/gradient = ExtResource("3_rrr44")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ueq1"]
+render_priority = 0
+shader = ExtResource("4_kjvx8")
+shader_parameter/specular = 0.4
+shader_parameter/roughness = 0.0
+shader_parameter/radius = 32.0
+shader_parameter/level = 34.0
+shader_parameter/gradient = ExtResource("5_ardp0")
+
+[node name="ExampleScene" type="Node3D"]
+script = ExtResource("1_bgk2m")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rqouq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.9
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.3
+directional_shadow_blend_splits = true
+
+[node name="Planet" parent="." instance=ExtResource("1_4gqoi")]
+sphere_type = 1
+radius = 32.0
+detail = 256
+terrain_material = SubResource("ShaderMaterial_5lwnw")
+water_detail = 128
+water_material = SubResource("ShaderMaterial_7ueq1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.163301, 0.014671, 0.986467, 0, 0.999889, -0.0148706, -0.986576, -0.0024284, -0.163283, 73.147, -0.072, -11.981)
