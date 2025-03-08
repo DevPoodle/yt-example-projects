@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2gjyvvvgdtjr"]
+
+[ext_resource type="Shader" uid="uid://dknj1nsplvx4y" path="res://triplanar.gdshader" id="1_e4qwt"]
+[ext_resource type="Texture2D" uid="uid://cmgep7bpdkd3g" path="res://addons/Rock022_2K-PNG/Rock022_2K-PNG_Color.png" id="2_pjc3o"]
+[ext_resource type="Texture2D" uid="uid://b53uhxa8euxsn" path="res://addons/Grass002_2K-PNG/Grass002_2K-PNG_Color.png" id="3_ywtm5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smq52"]
+render_priority = 0
+shader = ExtResource("1_e4qwt")
+shader_parameter/texture_x = ExtResource("2_pjc3o")
+shader_parameter/texture_y = ExtResource("3_ywtm5")
+shader_parameter/texture_z = ExtResource("2_pjc3o")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ynpq6"]
+material = SubResource("ShaderMaterial_smq52")
+
+[node name="ExampleScene" type="Node3D"]
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ynpq6")
