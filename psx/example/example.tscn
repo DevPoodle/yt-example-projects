@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpx2ai5h6eim5"]
+
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://example/default_object.gdshader" id="1_7cn0y"]
+[ext_resource type="ArrayMesh" uid="uid://cl80o1ow8rxrj" path="res://crate/crate.obj" id="1_fdt2r"]
+[ext_resource type="Shader" uid="uid://c7dhsbe1s7mgu" path="res://example/post_processing.gdshader" id="2_pjyox"]
+[ext_resource type="Texture2D" uid="uid://bkaksukvbnvnv" path="res://crate/texture/crate.png" id="2_scst5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fdt2r"]
+sky_horizon_color = Color(0.506344, 0.527634, 0.555741, 1)
+ground_bottom_color = Color(0.266802, 0.302258, 0.357529, 1)
+ground_horizon_color = Color(0.506344, 0.527634, 0.555741, 1)
+ground_curve = 0.0672719
+use_debanding = false
+
+[sub_resource type="Sky" id="Sky_pjyox"]
+sky_material = SubResource("ProceduralSkyMaterial_fdt2r")
+
+[sub_resource type="Environment" id="Environment_8clr1"]
+background_mode = 2
+sky = SubResource("Sky_pjyox")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wmyp6"]
+render_priority = 0
+shader = ExtResource("1_7cn0y")
+shader_parameter/color_texture = ExtResource("2_scst5")
+shader_parameter/vertex_wobble = 1.0
+shader_parameter/affine_mapping = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8clr1"]
+render_priority = 0
+shader = ExtResource("2_pjyox")
+shader_parameter/dither_amount = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_7cn0y"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Example" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8clr1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.68648, -0.444147, 0.575741, 0, 0.79178, 0.610807, -0.727149, -0.419307, 0.543541, 1.99629, 1.92654, 1.9833)
+
+[node name="Crate" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_wmyp6")
+mesh = ExtResource("1_fdt2r")
+
+[node name="ScreenQuad" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_8clr1")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_7cn0y")
