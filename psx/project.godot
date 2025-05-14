@@ -14,7 +14,7 @@ config/name="PSX Tutorial"
 config/tags=PackedStringArray("educational")
 run/main_scene="uid://dpx2ai5h6eim5"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dby122q8s7y2i"
 
 [display]
 
