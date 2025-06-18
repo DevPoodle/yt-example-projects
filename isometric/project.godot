@@ -15,7 +15,7 @@ config/tags=PackedStringArray("educational", "top_down_2d")
 run/main_scene="uid://b0jx2rju82gui"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
-config/icon="res://icon.svg"
+config/icon="uid://cy5ctyr27ghbr"
 
 [display]
 
