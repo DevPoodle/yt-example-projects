@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Marching Squares Tutorial"
+config/tags=PackedStringArray("educational")
+config/features=PackedStringArray("4.5", "Forward Plus")
+run/max_fps=60
+config/icon="uid://bimhhixublest"
+
+[debug]
+
+gdscript/warnings/integer_division=0
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=4
+window/stretch/mode="viewport"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
