@@ -16,6 +16,10 @@ run/main_scene="uid://caodwi5vem45e"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Level="*uid://b3hlpsqsg0ldg"
+
 [debug]
 
 gdscript/warnings/enable=false
@@ -25,6 +29,10 @@ gdscript/warnings/enable=false
 window/size/viewport_width=320
 window/size/viewport_height=180
 window/stretch/mode="viewport"
+
+[global_group]
+
+LevelTileMap=""
 
 [physics]
 

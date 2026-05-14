@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://o5jviw0ppc72"]
+
+[ext_resource type="Script" uid="uid://bphh50lsj1d15" path="res://moveable.gd" id="1_xwnab"]
+[ext_resource type="Texture2D" uid="uid://dto1fqeavfdvw" path="res://assets/crate.png" id="2_ncwnf"]
+
+[node name="Crate" type="Node2D" unique_id=1882103230]
+script = ExtResource("1_xwnab")
+metadata/_custom_type_script = "uid://bphh50lsj1d15"
+
+[node name="Crate" type="Sprite2D" parent="." unique_id=1387501487]
+texture = ExtResource("2_ncwnf")
