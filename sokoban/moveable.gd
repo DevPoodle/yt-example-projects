@@ -27,6 +27,8 @@ func move(direction: Vector2i) -> void:
 	if moveable:
 		moveable.move(direction)
 	slide(direction)
+	
+	Level.add_move_to_turn(self, direction)
 
 func slide(direction: Vector2i) -> void:
 	position = tile * 16.0 + Vector2(8.0, 8.0)

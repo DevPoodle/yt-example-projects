@@ -14,8 +14,10 @@ func _input(event: InputEvent) -> void:
 		"Right":
 			direction = Vector2i.RIGHT
 		"Z":
+			Level.undo_last_move()
 			return
 		_:
 			return
 	if can_move(direction):
+		Level.past_turns.append([])
 		move(direction)
