@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sokoban Tutorial"
-config/tags=PackedStringArray("educational", "top_down_2d")
+config/tags=PackedStringArray("top_down_2d")
 run/main_scene="uid://caodwi5vem45e"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://bd0u8mst6ngus"
