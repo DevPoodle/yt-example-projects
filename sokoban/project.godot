@@ -14,7 +14,7 @@ config/name="Sokoban Tutorial"
 config/tags=PackedStringArray("educational", "top_down_2d")
 run/main_scene="uid://caodwi5vem45e"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bd0u8mst6ngus"
 
 [autoload]
 
@@ -41,5 +41,4 @@ LevelTileMap=""
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-rendering_device/driver.windows="d3d12"
 environment/defaults/default_clear_color=Color(0.7607843, 0.7647059, 0.78039217, 1)

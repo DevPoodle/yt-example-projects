@@ -6,6 +6,7 @@ class Move:
 
 var tilemap: TileMapLayer
 var moveables: Array[Moveable]
+var detectors: Array[Detector]
 
 var past_turns: Array[Array]
 
@@ -25,6 +26,15 @@ func get_moveable_at_tile(tile: Vector2i) -> Moveable:
 		if node.tile == tile:
 			return node
 	return null
+
+func update_detectors(node: Moveable, from: Vector2i, to: Vector2i) -> void:
+	for detector: Detector in detectors:
+		if detector.tile == from:
+			print("EXited")
+			detector.exited.emit(node)
+		elif detector.tile == to:
+			print("ENTrance")
+			detector.entered.emit(node)
 
 func add_move_to_turn(node: Moveable, direction: Vector2i) -> void:
 	var move := Move.new()

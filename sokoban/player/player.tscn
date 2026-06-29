@@ -3,9 +3,48 @@
 [ext_resource type="Script" uid="uid://csypiyxamx2l6" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://dktlmmt5bejyo" path="res://assets/player.png" id="2_g1dw6"]
 
+[sub_resource type="Gradient" id="Gradient_rkbax"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5421687)
+colors = PackedColorArray(0.5137255, 0.4627451, 0.6117647, 1, 0.5137255, 0.4627451, 0.6117647, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g1dw6"]
+gradient = SubResource("Gradient_rkbax")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Curve" id="Curve_rkbax"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
 [node name="Player" type="Node2D" unique_id=715698892]
 script = ExtResource("1_rkbax")
 metadata/_custom_type_script = "uid://bphh50lsj1d15"
 
+[node name="Particles" type="CPUParticles2D" parent="." unique_id=1820029859]
+texture_filter = 1
+emitting = false
+amount = 4
+texture = SubResource("GradientTexture2D_g1dw6")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.84
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+damping_min = 2.0
+damping_max = 8.0
+angle_max = 180.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_rkbax")
+
 [node name="Player" type="Sprite2D" parent="." unique_id=530456468]
+z_index = 1
 texture = ExtResource("2_g1dw6")

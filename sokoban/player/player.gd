@@ -1,4 +1,5 @@
 extends Moveable
+class_name Player
 
 func _input(event: InputEvent) -> void:
 	if !event.is_pressed():
@@ -21,3 +22,8 @@ func _input(event: InputEvent) -> void:
 	if can_move(direction):
 		Level.past_turns.append([])
 		move(direction)
+		
+		var particles: CPUParticles2D = $Particles.duplicate()
+		particles.emitting = true
+		particles.finished.connect(particles.queue_free)
+		add_child(particles)

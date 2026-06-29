@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://6rog75hu0i8u"]
+
+[ext_resource type="Script" uid="uid://5pfoagpar2xn" path="res://detectors/flag/flag.gd" id="1_4ccv2"]
+[ext_resource type="Texture2D" uid="uid://sk5bqxm48eyx" path="res://assets/flag.png" id="2_xuoyf"]
+
+[node name="Flag" type="Node2D" unique_id=654133304]
+script = ExtResource("1_4ccv2")
+metadata/_custom_type_script = "uid://dmge4hsa1othk"
+
+[node name="SokobanFlag" type="Sprite2D" parent="." unique_id=959211081]
+texture = ExtResource("2_xuoyf")
+
+[connection signal="entered" from="." to="." method="_on_entered"]

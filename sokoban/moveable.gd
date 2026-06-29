@@ -37,3 +37,5 @@ func slide(direction: Vector2i) -> void:
 	var target := tile * 16.0 + Vector2(8.0, 8.0)
 	tween = create_tween()
 	tween.tween_property(self, "position", target, 0.08)
+	
+	Level.update_detectors(self, tile - direction, tile)

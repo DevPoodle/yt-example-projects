@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cvcion2ew88nr"]
+
+[ext_resource type="Script" uid="uid://cd4t3oajechwn" path="res://detectors/marker/marker.gd" id="1_7i0bj"]
+[ext_resource type="Texture2D" uid="uid://cj0cttaunyt5k" path="res://assets/marker.png" id="2_7i0bj"]
+
+[node name="Marker" type="Node2D" unique_id=817747541]
+script = ExtResource("1_7i0bj")
+metadata/_custom_type_script = "uid://dmge4hsa1othk"
+
+[node name="SokobanMarker" type="Sprite2D" parent="." unique_id=2069264964]
+texture = ExtResource("2_7i0bj")
+
+[connection signal="entered" from="." to="." method="_on_entered"]
+[connection signal="exited" from="." to="." method="_on_exited"]
